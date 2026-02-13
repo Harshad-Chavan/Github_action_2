@@ -26,7 +26,7 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
-  # This si another job in the workflow this depends/needs test
+    # This si another job in the workflow this depends/needs test
   deploy:
     name: Deploy
     needs: test
@@ -40,9 +40,9 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: npm ci
+        run: echo "Installing dependencies"
       - name: Build Project
-        run: npm run build
+        run:  echo "Building project"
       - name: Deploy
         run: echo "Deployed..."
 
