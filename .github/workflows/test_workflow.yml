@@ -1,0 +1,25 @@
+# Name of the workflow
+name: Test Workflow
+
+# This workflow will run on push on the repo
+on: push
+
+# defining the jobs that will urn
+jobs:
+  # job name
+  test:
+    # Runner (environment)
+    runs-on: ubuntu-latest
+    steps:
+      # Here an action is used to get code from repository into the runner
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Node Js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+
