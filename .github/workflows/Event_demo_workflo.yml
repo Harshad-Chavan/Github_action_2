@@ -1,8 +1,12 @@
 # Name of the workflow
-name: Test Workflow
+name: Event Demo Workflow
 
 # This workflow will run on push on the repo
-on: workflow_dispatch
+on:
+  pull_request:
+    types:
+      - opened
+  workflow_dispatch:
 
 # defining the jobs that will urn
 jobs:
