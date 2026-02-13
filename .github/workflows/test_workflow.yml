@@ -22,4 +22,13 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
+  # This si another job in the workflow this depends/needs test
+  deploy:
+    name: Deploy
+    needs: test
+    runs-on: ubuntu_latest
+    steps:
+    - name: Deploying to server
+      run: echo "Deploying...."
+
 
