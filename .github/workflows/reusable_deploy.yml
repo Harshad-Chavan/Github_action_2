@@ -1,5 +1,12 @@
 name: Reusable deploy
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: Any artifact name
+        required: true
+        default: dist
+        type: string
 jobs:
   deploy:
     name: Deploy
