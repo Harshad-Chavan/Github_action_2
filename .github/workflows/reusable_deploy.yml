@@ -1,0 +1,9 @@
+name: Reuseable deploy
+on: ...
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "deploying project..."
