@@ -11,7 +11,7 @@ jobs:
         node-version : [12,14]
         operating-system: [ubuntu-latest,windows-latest]
     name: Build project
-    runs-on: $ {{ matrix.operating-system }}
+    runs-on: ${{ matrix.operating-system }}
     steps:
       # Here an action is used to get code from repository into the runner
       - name: Get code
@@ -19,7 +19,7 @@ jobs:
       - name: Install Node Js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.operating-system }}
+          node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm ci
 
