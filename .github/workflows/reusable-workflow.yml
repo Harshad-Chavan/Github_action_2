@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Reusable Workflow example
 on:
   workflow_dispatch:
   push:
